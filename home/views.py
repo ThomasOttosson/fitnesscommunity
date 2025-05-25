@@ -25,7 +25,7 @@ class PostList(generic.ListView):
     """
     queryset = Post.objects.filter(status=1)
     template_name = "home/index.html"
-    paginate_by = 6
+    paginate_by = 3
 
 
 def post_detail(request, slug):
@@ -67,7 +67,7 @@ def post_detail(request, slug):
 
     return render(
         request,
-        "blog/post_detail.html",
+        "home/post_detail.html",
         {
             "post": post,
             "comments": comments,
